@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Polyglot Mode — NEUROLAB</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    textarea {
+      width: 80%;
+      max-width: 600px;
+      height: 120px;
+      padding: 10px;
+      font-size: 1em;
+      margin: 20px 0;
+    }
+    select, button {
+      margin: 10px;
+      padding: 10px;
+      font-size: 1em;
+    }
+    .output {
+      margin-top: 30px;
+    }
+    a {
+      color: #00ffff;
+      display: block;
+      margin-top: 40px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌐 Polyglot Mode</h1>
+    <textarea id="textInput" placeholder="Enter text to pronounce..."></textarea><br>
+
+    <label for="languageSelect">Choose language:</label>
+    <select id="languageSelect">
+      <option value="en-US">English</option>
+      <option value="it-IT">Italian</option>
+      <option value="fr-FR">French</option>
+      <option value="es-ES">Spanish</option>
+      <option value="ar-SA">Arabic</option>
+    </select><br>
+
+    <button onclick="speakText()">🔊 Speak</button>
+    <a href="../index.html">← Back to NEUROLAB</a>
+  </div>
+
+  <script>
+    function speakText() {
+      const text = document.getElementById('textInput').value;
+      const lang = document.getElementById('languageSelect').value;
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = lang;
+      speechSynthesis.speak(utterance);
+    }
+  </script>
+</body>
+</html>
