@@ -1,0 +1,40 @@
+body {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  font-family: 'Segoe UI', sans-serif;
+  color: #aefcff;
+  text-align: center;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.module-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.module {
+  background: #061f2c;
+  border: 2px solid #00ffff;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 200px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.module:hover {
+  background: #0a334a;
+  transform: scale(1.05);
+}
+
+a {
+  color: #00ffff;
+  text-decoration: none;
+}
